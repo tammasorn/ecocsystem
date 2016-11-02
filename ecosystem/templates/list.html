@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+
+{% block page %}
+
+    <div class="panel">
+        <div class="panel-heading">
+            <h4 class="panel-title text-center">
+                Register List
+            </h4>
+
+            <div class="panel-body">
+                <table class="table table-bordered table-hover table-stripe">
+                    <thead>
+                        <tr>
+                            <th>Email</th>
+                            <th>Title</th>
+                            <th>First name</th>
+                            <th>Lastname</th>
+                            <th>Birthday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for regis in register %}
+                            <tr>
+                                <td scope="row">{{ regis.email }}</td>
+                                <td>{{ regis.title }}</td>
+                                <td>{{ regis.first_name }}</td>
+                                <td>{{ regis.last_name }}</td>
+                                <td>{{ regis.birth_date }}</td>
+
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}
